@@ -14,6 +14,14 @@ export default new Router({
       component: () => import('./views/magazine/magazine')
     },
     {
+      path:'/stylist',
+      component: () => import('./views/stylist/stylist')
+    },
+    {
+      path:'/admin',
+      component: () => import('./views/user/admin.vue')
+    },
+    {
       path: '/',
       redirect:Index
     }

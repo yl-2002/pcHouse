@@ -4,26 +4,49 @@ import Index from './views/index/index'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       component: () => import('./views/index/index')
     },
     {
-      path:'/magazine',
+      path: '/magazine',
       component: () => import('./views/magazine/magazine')
     },
     {
-      path:'/stylist',
+      path: '/stylist',
       component: () => import('./views/stylist/stylist')
     },
     {
-      path:'/admin',
-      component: () => import('./views/user/admin.vue')
+      path: '/user',
+      component: () => import('./views/user/user.vue'),
+      children: [{
+          path: '/user',
+          redirect: '/admin'
+        }, {
+          path: '/admin',
+          component: () => import('./views/user/admin')
+        }, {
+          path: '/admin/login',
+          component: () => import('./views/user/login')
+        },
+        {
+          path: '/admin/shezhi',
+          component: () => import('./views/user/shezhi.vue'),
+        },
+        {
+          path: '/admin/shezhi/yjfk',
+          component: () => import('./views/user/yjfk.vue')
+        },
+        {
+          path: '/admin/xx',
+          component: () => import('./views/user/xx.vue')
+        },
+      ]
     },
+
     {
       path: '/',
-      redirect:Index
+      redirect: Index
     }
   ]
 })

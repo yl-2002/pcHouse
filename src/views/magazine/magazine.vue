@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Hd :title="杂志"></Hd>
+        <Hd title="杂志"></Hd>
          <div  class="box">
          <h2>2020</h2>
   <van-row  type="flex" justify="space-around">

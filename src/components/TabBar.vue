@@ -1,9 +1,9 @@
 <template>
   <div>
     
-<van-tabbar v-model="active" active-color="rgb(192, 194, 98)" inactive-color="#000" @change="onChange" route>
+<van-tabbar v-model="active" active-color="rgb(192, 194, 98)" inactive-color="#000" route>
   <van-tabbar-item icon="wap-home-o" to="/">首页</van-tabbar-item>
-  <van-tabbar-item icon="orders-o" to="/magazine" @click="zz">杂志</van-tabbar-item>
+  <van-tabbar-item icon="orders-o" to="/magazine">杂志</van-tabbar-item>
   <van-tabbar-item icon="friends-o" to="/stylist">设计者</van-tabbar-item>
   <van-tabbar-item icon="contact" to='/admin'>我的</van-tabbar-item>
 </van-tabbar>

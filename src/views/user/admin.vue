@@ -17,7 +17,7 @@
       </van-row>
       <van-row style="margin-top: 170px;" v-if="dls">
         <van-col span="8" style="text-align:right">
-          <img src="../../assets/img/datu.png" alt />
+          <img src="../../assets/img/1606838120320.jpeg" alt style="width: 79px;border-radius: 50%;"/>
         </van-col>
         <van-col span="8" offset="1">
           <h3 class="lj">{{name}}</h3>
@@ -28,13 +28,13 @@
         </van-col>
       </van-row>
       <van-grid :gutter="10" style="margin-top:40px">
-        <van-grid-item icon="manager" text="身份认证" />
-        <van-grid-item icon="wap-home" text="我的案例" />
-        <van-grid-item icon="printer" text="草稿箱" />
-        <van-grid-item icon="todo-list" text="我的话题" />
-        <van-grid-item icon="star" text="我的收藏" />
+        <van-grid-item icon="manager" text="身份认证" to="/admin/sfrz"/>
+        <van-grid-item icon="wap-home" text="我的案例" to="/admin/al"/>
+        <van-grid-item icon="printer" text="草稿箱" to="/admin/cgx"/>
+        <van-grid-item icon="todo-list" text="我的话题"  to="/admin/ht"/>
+        <van-grid-item icon="star" text="我的收藏" to="/admin/shoucang"/>
         <van-grid-item icon="gem" text="积分管理" />
-        <van-grid-item icon="column" text="我的小区" />
+        <van-grid-item icon="wap-home" text="我的小区" />
       </van-grid>
       <div class="verson">V4.7.3</div>
     </div>
@@ -60,11 +60,11 @@ export default {
   },
   methods: {
     zx() {
+      localStorage.removeItem("user");
        Toast.loading("注销中...");
         setTimeout(() => {
         Toast.clear();
       }, 1000);
-      localStorage.removeItem("user");
       setTimeout(() => {
           Toast.success("注销成功");
           this.$router.go(0)
